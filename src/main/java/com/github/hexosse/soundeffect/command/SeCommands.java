@@ -17,18 +17,23 @@ package com.github.hexosse.soundeffect.command;
  */
 
 import com.github.hexocraftapi.command.Command;
+import com.github.hexocraftapi.command.CommandArgument;
 import com.github.hexocraftapi.command.CommandInfo;
 import com.github.hexocraftapi.command.predifined.CommandHelp;
 import com.github.hexocraftapi.command.predifined.CommandReload;
+import com.github.hexocraftapi.command.type.ArgTypeSound;
+import com.github.hexocraftapi.command.type.ArgTypeSoundPitch;
+import com.github.hexocraftapi.command.type.ArgTypeSoundVolume;
 import com.github.hexocraftapi.message.predifined.message.PluginMessage;
+import com.github.hexocraftapi.sounds.PlaySounds;
+import com.github.hexocraftapi.sounds.Sounds;
 import com.github.hexosse.soundeffect.SoundEffect;
 import com.github.hexosse.soundeffect.configuration.Messages;
 import com.github.hexosse.soundeffect.configuration.Permissions;
 import com.google.common.collect.Lists;
-import org.apache.commons.lang.StringUtils;
 import org.bukkit.ChatColor;
+import org.bukkit.Sound;
 import org.bukkit.entity.Player;
-import org.bukkit.inventory.ItemStack;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import static com.github.hexosse.soundeffect.SoundEffect.config;
@@ -42,6 +47,8 @@ public class SeCommands extends Command<SoundEffect>
 	{
 		super("SoundEffect", plugin);
 		this.setAliases(Lists.newArrayList("se"));
+
+		this.addSubCommand(new SeCommandPlaySound(plugin));
 
 		this.addSubCommand(new SeCommandReload(plugin));
 		this.addSubCommand(new SeCommandHelp(plugin));
@@ -58,12 +65,42 @@ public class SeCommands extends Command<SoundEffect>
 
 
 
+	public class SeCommandPlaySound extends Command<SoundEffect>
+	{
+		public SeCommandPlaySound(SoundEffect plugin)
+		{
+			super("PlaySound", plugin);
+			this.setAliases(Lists.newArrayList("playsound", "ps"));
+			this.setPermission(Permissions.PLAY_SOUND.toString());
+			this.setDescription(plugin.messages.cPlaySound);
+
+			this.addArgument(new CommandArgument<Sound>("sound", ArgTypeSound.get(), true,true, plugin.messages.cPlaySoundSound));
+			this.addArgument(new CommandArgument<Float>("volume", ArgTypeSoundVolume.get(), true,true, plugin.messages.cPlaySoundVolume));
+			this.addArgument(new CommandArgument<Float>("pitch", ArgTypeSoundPitch.get(), true,true, plugin.messages.cPlaySoundPitch));
+		}
+
+		@Override
+		public boolean onCommand(CommandInfo commandInfo)
+		{
+			Sound sound = Sounds.get(commandInfo.getNamedArg("sound"));
+			float volume = Float.parseFloat(commandInfo.getNamedArg("volume"));
+			float pitch = Float.parseFloat(commandInfo.getNamedArg("pitch"));
+
+			PlaySounds.play(commandInfo.getPlayer(), sound, volume, pitch);
+
+			return true;
+		}
+	}
+
+
+
+
 	public class SeCommandReload extends CommandReload<SoundEffect>
 	{
 		public SeCommandReload(SoundEffect plugin)
 		{
 			super(plugin, Permissions.ADMIN.toString());
-			this.setDescription(StringUtils.join(plugin.messages.cReload,"\n"));
+			this.setDescription(plugin.messages.cReload);
 		}
 
 		@Override
@@ -101,7 +138,7 @@ public class SeCommands extends Command<SoundEffect>
 		public SeCommandHelp(SoundEffect plugin)
 		{
 			super(plugin);
-			this.setDescription(StringUtils.join(plugin.messages.cHelp,"\n"));
+			this.setDescription(plugin.messages.cHelp);
 		}
 	}
 

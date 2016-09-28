@@ -23,7 +23,8 @@ import org.bukkit.command.CommandSender;
  */
 public enum Permissions
 {
-	ADMIN("SoundEffect.admin");
+	ADMIN("SoundEffect.admin"),
+	PLAY_SOUND("SoundEffect.play.sound");
 
 	private final String permission;
 

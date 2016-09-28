@@ -22,7 +22,6 @@ import com.github.hexocraftapi.configuration.annotation.ConfigValue;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.List;
 
 /**
@@ -36,8 +35,12 @@ public class Messages extends Configuration
 
 	/* Commands */
 	@ConfigPath(path = "commands", 		comment = "List of messages used in commands")
-	@ConfigValue(path = "commands.help.cmd")					public List cHelp   = Arrays.asList("Display help");
-	@ConfigValue(path = "commands.reload.cmd")					public List cReload = Arrays.asList("Reload SoundEffect");
+	@ConfigValue(path = "commands.help")						public String cHelp   = "Display help";
+	@ConfigValue(path = "commands.reload")						public String cReload = "Reload SoundEffect";
+	@ConfigValue(path = "commands.playSound.cmd")				public String cPlaySound = "Play a sound";
+	@ConfigValue(path = "commands.playSound.sound")				public String cPlaySoundSound = "Bukkit Sound";
+	@ConfigValue(path = "commands.playSound.volume")			public String cPlaySoundVolume = "Volume";
+	@ConfigValue(path = "commands.playSound.pitch")				public String cPlaySoundPitch = "Pitch";
 
 	/* Success */
 	@ConfigPath(path = "success", 		comment = "List of messages used after a success command")
