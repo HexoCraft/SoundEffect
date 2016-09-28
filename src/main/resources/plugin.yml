@@ -1,0 +1,12 @@
+name: ${project.name}
+version: ${project.version}
+description: ${project.description}
+main: com.github.hexocraftapi.soundeffect.SoundEffect
+
+author: hexosse
+website: www.github.hexocraftapi
+
+depend: []
+softdepend: []
+
+
