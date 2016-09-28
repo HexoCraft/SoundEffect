@@ -23,6 +23,7 @@ import com.github.hexocraftapi.updater.GitHubUpdater;
 import com.github.hexosse.soundeffect.command.SeCommands;
 import com.github.hexosse.soundeffect.configuration.Config;
 import com.github.hexosse.soundeffect.configuration.Messages;
+import com.github.hexosse.soundeffect.configuration.Sounds;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 
@@ -34,6 +35,7 @@ public class SoundEffect extends Plugin
 	public static SoundEffect instance = null;
 	public static Config      config   = null;
 	public static Messages    messages = null;
+	public static Sounds      sounds = null;
 
 
 	@Override
@@ -45,6 +47,7 @@ public class SoundEffect extends Plugin
        /* Chargement de la configuration */
 		config = new Config(this, "config.yml", true);
 		messages = new Messages(this, config.messages, true);
+		sounds = new Sounds(this, "sounds.yml", true);
 
 		/* Enregistrement des commandes */
 		registerCommands(new SeCommands(this));
