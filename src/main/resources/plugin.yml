@@ -9,4 +9,9 @@ website: www.github.hexocraftapi
 depend: []
 softdepend: []
 
-
+permissions:
+  SoundEffect.admin: {description: All permissions, default: false}
+  SoundEffect.*:
+    default: op
+    children:
+        SoundEffect.admin: true
