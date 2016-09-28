@@ -21,6 +21,10 @@ import com.github.hexocraftapi.configuration.annotation.ConfigPath;
 import com.github.hexocraftapi.configuration.annotation.ConfigValue;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
+
 /**
  * @author <b>Hexosse</b> (<a href="https://github.com/hexosse">on GitHub</a>))
  */
@@ -28,11 +32,16 @@ public class Messages extends Configuration
 {
 	/* Chat */
 	@ConfigPath(path = "chat")
-	@ConfigValue(path = "chat.prefix")					public String chatPrefix = "§3[§bSoundEffect§3]§r";
+	@ConfigValue(path = "chat.prefix")							public String chatPrefix = "§3[§bSoundEffect§3]§r";
 
 	/* Commands */
+	@ConfigPath(path = "commands", 		comment = "List of messages used in commands")
+	@ConfigValue(path = "commands.help.cmd")					public List cHelp   = Arrays.asList("Display help");
+	@ConfigValue(path = "commands.reload.cmd")					public List cReload = Arrays.asList("Reload SoundEffect");
 
 	/* Success */
+	@ConfigPath(path = "success", 		comment = "List of messages used after a success command")
+	@ConfigValue(path = "success.reload")						public String sReload = "SoundEffect has been reloaded";
 
 	/* Errors */
 
