@@ -1,7 +1,7 @@
 name: SoundEffect
 version: ${project.version}
 description: ${project.description}
-main: com.github.hexosse.soundeffect.SoundEffect
+main: com.github.hexosse.soundeffect.SoundEffectPlugin
 
 author: hexosse
 website: www.github.hexocraftapi

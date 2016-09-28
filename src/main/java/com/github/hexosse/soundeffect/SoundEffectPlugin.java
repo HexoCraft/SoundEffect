@@ -30,12 +30,12 @@ import org.bukkit.command.CommandSender;
 /**
  * @author <b>Hexosse</b> (<a href="https://github.com/hexosse">on GitHub</a>))
  */
-public class SoundEffect extends Plugin
+public class SoundEffectPlugin extends Plugin
 {
-	public static SoundEffect instance = null;
-	public static Config      config   = null;
-	public static Messages    messages = null;
-	public static Sounds      sounds = null;
+	public static SoundEffectPlugin instance = null;
+	public static Config            config   = null;
+	public static Messages          messages = null;
+	public static Sounds            sounds   = null;
 
 
 	@Override

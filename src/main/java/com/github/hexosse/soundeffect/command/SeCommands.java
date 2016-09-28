@@ -27,7 +27,7 @@ import com.github.hexocraftapi.command.type.ArgTypeSoundVolume;
 import com.github.hexocraftapi.message.predifined.message.PluginMessage;
 import com.github.hexocraftapi.sounds.PlaySounds;
 import com.github.hexocraftapi.sounds.Sounds;
-import com.github.hexosse.soundeffect.SoundEffect;
+import com.github.hexosse.soundeffect.SoundEffectPlugin;
 import com.github.hexosse.soundeffect.configuration.Messages;
 import com.github.hexosse.soundeffect.configuration.Permissions;
 import com.google.common.collect.Lists;
@@ -36,14 +36,14 @@ import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 
-import static com.github.hexosse.soundeffect.SoundEffect.config;
+import static com.github.hexosse.soundeffect.SoundEffectPlugin.config;
 
 /**
  * @author <b>Hexosse</b> (<a href="https://github.com/hexosse">on GitHub</a>))
  */
-public class SeCommands extends Command<SoundEffect>
+public class SeCommands extends Command<SoundEffectPlugin>
 {
-	public SeCommands(SoundEffect plugin)
+	public SeCommands(SoundEffectPlugin plugin)
 	{
 		super("SoundEffect", plugin);
 		this.setAliases(Lists.newArrayList("se"));
@@ -65,9 +65,9 @@ public class SeCommands extends Command<SoundEffect>
 
 
 
-	public class SeCommandPlaySound extends Command<SoundEffect>
+	public class SeCommandPlaySound extends Command<SoundEffectPlugin>
 	{
-		public SeCommandPlaySound(SoundEffect plugin)
+		public SeCommandPlaySound(SoundEffectPlugin plugin)
 		{
 			super("PlaySound", plugin);
 			this.setAliases(Lists.newArrayList("playsound", "ps"));
@@ -95,9 +95,9 @@ public class SeCommands extends Command<SoundEffect>
 
 
 
-	public class SeCommandReload extends CommandReload<SoundEffect>
+	public class SeCommandReload extends CommandReload<SoundEffectPlugin>
 	{
-		public SeCommandReload(SoundEffect plugin)
+		public SeCommandReload(SoundEffectPlugin plugin)
 		{
 			super(plugin, Permissions.ADMIN.toString());
 			this.setDescription(plugin.messages.cReload);
@@ -133,9 +133,9 @@ public class SeCommands extends Command<SoundEffect>
 
 
 
-	public class SeCommandHelp extends CommandHelp<SoundEffect>
+	public class SeCommandHelp extends CommandHelp<SoundEffectPlugin>
 	{
-		public SeCommandHelp(SoundEffect plugin)
+		public SeCommandHelp(SoundEffectPlugin plugin)
 		{
 			super(plugin);
 			this.setDescription(plugin.messages.cHelp);
