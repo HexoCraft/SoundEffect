@@ -20,6 +20,7 @@ import com.github.hexocraftapi.message.Line;
 import com.github.hexocraftapi.message.predifined.message.PluginMessage;
 import com.github.hexocraftapi.plugin.Plugin;
 import com.github.hexocraftapi.updater.GitHubUpdater;
+import com.github.hexosse.soundeffect.command.SeCommands;
 import com.github.hexosse.soundeffect.configuration.Config;
 import com.github.hexosse.soundeffect.configuration.Messages;
 import org.bukkit.ChatColor;
@@ -46,6 +47,7 @@ public class SoundEffect extends Plugin
 		messages = new Messages(this, config.messages, true);
 
 		/* Enregistrement des commandes */
+		registerCommands(new SeCommands(this));
 
         /* Enregistrement des listener */
 
