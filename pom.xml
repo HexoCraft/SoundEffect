@@ -269,7 +269,7 @@
                             <API-Version>${project.version}</API-Version>
                         </manifestEntries>
                     </archive>
-                    <outputDirectory>../../Serveurs/Tests/plugins</outputDirectory>
+                    <!-- <outputDirectory>../../Serveurs/Tests/plugins</outputDirectory> -->
                 </configuration>
             </plugin>
 
