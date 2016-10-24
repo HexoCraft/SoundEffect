@@ -38,6 +38,11 @@ Both can be disable in config.yml
 <br>
 <br>
 
+#### Tab completion:
+All commands have a full tab completion with a detailed help.
+<br>
+<br>
+
 #### API:
 As it is designed as an API, you can add SoundEffect to your plugin using maven
 
@@ -61,10 +66,10 @@ As it is designed as an API, you can add SoundEffect to your plugin using maven
     </dependencies>
 ```
 
-The API can be found in SoundEffectApi.
+The API can be found in SoundEffectApi class.
 <br>
 <br>
 
 
 #### Ressources:
-Releases : https://github.com/hexosse/SoundEffect/releases
+Releases : https://github.com/hexocraft/SoundEffect/releases
