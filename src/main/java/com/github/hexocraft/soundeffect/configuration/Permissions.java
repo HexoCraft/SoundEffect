@@ -1,4 +1,4 @@
-package com.github.hexosse.soundeffect.configuration;
+package com.github.hexocraft.soundeffect.configuration;
 
 /*
  * Copyright 2016 hexosse
@@ -24,7 +24,9 @@ import org.bukkit.command.CommandSender;
 public enum Permissions
 {
 	ADMIN("SoundEffect.admin"),
-	PLAY_SOUND("SoundEffect.play.sound");
+	PLAY_SOUND("SoundEffect.play.sound"),
+	CREATE_SOUND_EFFECT("SoundEffect.create.soundEffect"),
+	PLAY_SOUND_EFFECT("SoundEffect.play.soundEffect");
 
 	private final String permission;
 

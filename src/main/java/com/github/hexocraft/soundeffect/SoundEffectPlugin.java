@@ -1,4 +1,4 @@
-package com.github.hexosse.soundeffect;
+package com.github.hexocraft.soundeffect;
 
 /*
  * Copyright 2016 hexosse
@@ -18,12 +18,13 @@ package com.github.hexosse.soundeffect;
 
 import com.github.hexocraftapi.message.Line;
 import com.github.hexocraftapi.message.predifined.message.PluginMessage;
+import com.github.hexocraftapi.message.predifined.message.PluginTitleMessage;
 import com.github.hexocraftapi.plugin.Plugin;
 import com.github.hexocraftapi.updater.GitHubUpdater;
-import com.github.hexosse.soundeffect.command.SeCommands;
-import com.github.hexosse.soundeffect.configuration.Config;
-import com.github.hexosse.soundeffect.configuration.Messages;
-import com.github.hexosse.soundeffect.configuration.Sounds;
+import com.github.hexocraft.soundeffect.command.SeCommands;
+import com.github.hexocraft.soundeffect.configuration.Config;
+import com.github.hexocraft.soundeffect.configuration.Messages;
+import com.github.hexocraft.soundeffect.configuration.Sounds;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 
@@ -49,13 +50,20 @@ public class SoundEffectPlugin extends Plugin
 		messages = new Messages(this, config.messages, true);
 		sounds = new Sounds(this, "sounds.yml", true);
 
+		/*SoundEffectApi.createSoundEffect("THUNDER", com.github.hexocraftapi.sounds.Sounds.get("ENTITY_LIGHTNING_THUNDER"), "RANDOM * (10 - 1) + 1", "1", 0);
+		SoundEffectApi.createSoundEffect("MINI_THUNDER");
+		SoundEffectApi.addSoundEffect("MINI_THUNDER", "THUNDER", 1);
+		SoundEffectApi.addSoundEffect("MINI_THUNDER", "THUNDER", 2);
+		SoundEffectApi.addSoundEffect("MINI_THUNDER", "THUNDER", 3);
+		SoundEffectApi.addSoundEffect("MINI_THUNDER", "THUNDER", 4);*/
+
 		/* Enregistrement des commandes */
 		registerCommands(new SeCommands(this));
 
         /* Enregistrement des listener */
 
 		/* Enable message */
-		PluginMessage.toConsole(this, "Enable", ChatColor.YELLOW);
+		PluginTitleMessage.toConsole(this, "Enable", ChatColor.YELLOW);
 
 		/* Updater */
 		if(config.useUpdater)

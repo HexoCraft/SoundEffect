@@ -1,4 +1,4 @@
-package com.github.hexosse.soundeffect.configuration;
+package com.github.hexocraft.soundeffect.configuration;
 
 /*
  * Copyright 2016 hexosse
@@ -32,6 +32,9 @@ import org.bukkit.plugin.java.JavaPlugin;
 "#                                                                                                                      ",
 "# SoundEffect is a plugin and an API which make easy to create any sound effect                                        ",
 "# by compiling all sort of existing sound already present in Minecraft.                                                ",
+"#                                                                                                                      ",
+"#                                                                                                                      ",
+"# For more details on how to play sounds or sound effect, look at sounds.yml                                           ",
 "#                                                                                                                      ",
 "# ===------------------------------------------------------------------------------------------ © 2016 Hexosse ---=== #"
 })

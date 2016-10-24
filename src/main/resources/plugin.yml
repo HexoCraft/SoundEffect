@@ -1,7 +1,7 @@
 name: SoundEffect
 version: ${project.version}
 description: ${project.description}
-main: com.github.hexosse.soundeffect.SoundEffectPlugin
+main: com.github.hexocraft.soundeffect.SoundEffectPlugin
 
 author: hexosse
 website: www.github.hexocraftapi
@@ -12,6 +12,8 @@ softdepend: []
 permissions:
   SoundEffect.admin: {description: All permissions, default: false}
   SoundEffect.play.sound: {description: Play a sound, default: false}
+  SoundEffect.create.soundEffect: {description: Play a sound, default: false}
+  SoundEffect.play.soundEffect: {description: Play a sound, default: false}
   SoundEffect.*:
     default: op
     children:
@@ -19,3 +21,5 @@ permissions:
   SoundEffect.admin:
     children:
         SoundEffect.play.sound: true
+        SoundEffect.create.soundEffect: true
+        SoundEffect.play.soundEffect: true

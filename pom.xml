@@ -20,12 +20,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.hexosse</groupId>
-    <artifactId>SoundEffect</artifactId>
+    <groupId>com.github.hexocraft</groupId>
+    <artifactId>soundeffect</artifactId>
+    <name>SoundEffect</name>
     <version>1.0.0</version>
     <packaging>jar</packaging>
     <description>Sound Effect plugin and API fir Bukkit server.</description>
-    <url>https://github.com/HexoCraft/SoundEffect</url>
+    <url>https://github.com/HexoCraft/${project.name}</url>
 
 
     <!-- License -->
@@ -40,21 +41,21 @@
 
     <!-- scm -->
     <scm>
-        <url>http://github.com/HexoCraftApi/SoundEffect</url>
-        <connection>scm:git:git://github.com/HexoCraftApi/SoundEffect.git</connection>
-        <developerConnection>scm:git:git@github.com:HexoCraftApi/SoundEffect.git</developerConnection>
+        <url>http://github.com/HexoCraft/${project.name}</url>
+        <connection>scm:git:git://github.com/HexoCraft/${project.name}.git</connection>
+        <developerConnection>scm:git:git@github.com:HexoCraft/${project.name}.git</developerConnection>
     </scm>
 
     <issueManagement>
         <system>GitHub</system>
-        <url>https://github.com/HexoCraftApi/SoundEffect/issues</url>
+        <url>https://github.com/HexoCraft/${project.name}/issues</url>
     </issueManagement>
 
 
     <!-- Propriétés du projet -->
     <properties>
         <jdk.version>1.7</jdk.version>
-        <bukkit.version>1.9.4-R0.1-SNAPSHOT</bukkit.version>
+        <bukkit.version>1.10.2-R0.1-SNAPSHOT</bukkit.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <github.global.server>github</github.global.server>
     </properties>
@@ -120,25 +121,31 @@
             <scope>provided</scope>
         </dependency> -->
         <!-- bukkit -->
-        <!-- <dependency>
+        <dependency>
             <groupId>org.bukkit</groupId>
             <artifactId>bukkit</artifactId>
             <version>${bukkit.version}</version>
             <scope>provided</scope>
-        </dependency> -->
+        </dependency>
         <!-- Craftbukkit -->
-        <dependency>
+        <!-- <dependency>
             <groupId>org.bukkit</groupId>
             <artifactId>craftbukkit</artifactId>
             <version>${bukkit.version}</version>
             <scope>provided</scope>
-        </dependency>
-        <!-- hexosse Plugin -->
+        </dependency> -->
+        <!-- HexoCraftApi Plugin -->
         <dependency>
             <groupId>com.github.hexocraftapi</groupId>
             <artifactId>plugin</artifactId>
             <version>[1.0.0, )</version>
             <scope>compile</scope>
+        </dependency>
+        <!-- exp4j -->
+        <dependency>
+            <groupId>net.objecthunter</groupId>
+            <artifactId>exp4j</artifactId>
+            <version>0.4.7</version>
         </dependency>
     </dependencies>
 
@@ -234,16 +241,16 @@
                         <configuration>
                             <relocations>
                                 <relocation>
+                                    <pattern>net.objecthunter.exp4j</pattern>
+                                    <shadedPattern>${project.groupId}.${project.artifactId}.api.exp4j</shadedPattern>
+                                </relocation>
+                                <relocation>
                                     <pattern>com.github.hexocraftapi</pattern>
-                                    <shadedPattern>com.github.hexosse.${project.artifactId}.framework</shadedPattern>
+                                    <shadedPattern>${project.groupId}.${project.artifactId}.api</shadedPattern>
                                 </relocation>
                             </relocations>
-                            <!-- remove unnecessary stuff -->
-                            <minimizeJar>true</minimizeJar>
-                            <!-- utterly useless artifact from shade 2.x -->
-                            <createDependencyReducedPom>false</createDependencyReducedPom>
-                            <!-- Le fichier jar d'origine est renommé en original-XXXX.jar -->
-                            <shadedArtifactAttached>false</shadedArtifactAttached>
+                            <minimizeJar>false</minimizeJar>
+                            <createDependencyReducedPom>true</createDependencyReducedPom>
                         </configuration>
                     </execution>
                 </executions>
@@ -262,6 +269,7 @@
                             <API-Version>${project.version}</API-Version>
                         </manifestEntries>
                     </archive>
+                    <outputDirectory>../../Serveurs/Tests/plugins</outputDirectory>
                 </configuration>
             </plugin>
 
