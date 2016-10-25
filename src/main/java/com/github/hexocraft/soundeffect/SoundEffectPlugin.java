@@ -50,13 +50,6 @@ public class SoundEffectPlugin extends Plugin
 		messages = new Messages(this, config.messages, true);
 		sounds = new Sounds(this, "sounds.yml", true);
 
-		/*SoundEffectApi.createSoundEffect("THUNDER", com.github.hexocraftapi.sounds.Sounds.get("ENTITY_LIGHTNING_THUNDER"), "RANDOM * (10 - 1) + 1", "1", 0);
-		SoundEffectApi.createSoundEffect("MINI_THUNDER");
-		SoundEffectApi.addSoundEffect("MINI_THUNDER", "THUNDER", 1);
-		SoundEffectApi.addSoundEffect("MINI_THUNDER", "THUNDER", 2);
-		SoundEffectApi.addSoundEffect("MINI_THUNDER", "THUNDER", 3);
-		SoundEffectApi.addSoundEffect("MINI_THUNDER", "THUNDER", 4);*/
-
 		/* Enregistrement des commandes */
 		registerCommands(new SeCommands(this));
 
@@ -84,7 +77,7 @@ public class SoundEffectPlugin extends Plugin
 
 	public void runUpdater(final CommandSender sender, int delay)
 	{
-		super.runUpdater(new GitHubUpdater(this, "HexoCraftApi/SoundEffect"), sender, delay);
+		super.runUpdater(new GitHubUpdater(this, "HexoCraft/SoundEffect"), sender, delay);
 	}
 
 	private void runMetrics(int delay)
