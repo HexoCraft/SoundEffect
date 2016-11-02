@@ -45,7 +45,7 @@ public class SoundEffectPlugin extends Plugin
 		/* Instance du plugin */
 		instance = this;
 
-       /* Chargement de la configuration */
+		/* Chargement de la configuration */
 		config = new Config(this, "config.yml", true);
 		messages = new Messages(this, config.messages, true);
 		sounds = new Sounds(this, "sounds.yml", true);
@@ -84,5 +84,4 @@ public class SoundEffectPlugin extends Plugin
 	{
 		super.RunMetrics(delay);
 	}
-
 }
