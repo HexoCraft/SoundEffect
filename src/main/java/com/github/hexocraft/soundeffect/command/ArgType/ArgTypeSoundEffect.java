@@ -20,6 +20,7 @@ import com.github.hexocraftapi.command.CommandInfo;
 import com.github.hexocraftapi.command.type.ArgType;
 import com.github.hexocraft.soundeffect.SoundEffectApi;
 import com.github.hexocraft.soundeffect.sound.SoundEffect;
+import com.google.common.collect.ImmutableList;
 import org.bukkit.util.StringUtil;
 
 import java.util.ArrayList;
@@ -57,6 +58,10 @@ public class ArgTypeSoundEffect implements ArgType<SoundEffect>
 	public List<String> tabComplete(CommandInfo commandInfo)
 	{
 		String lastWord = commandInfo.numArgs() == 0 ? "" : commandInfo.getArgs().get(commandInfo.numArgs()-1);
+
+		// List of sounds
+		if(SoundEffectApi.listSoundEffect().getList() == null)
+			return ImmutableList.of();
 
 		ArrayList<String> matchedSoundEffect = new ArrayList<String>();
 		for(SoundEffect soundEffect: SoundEffectApi.listSoundEffect().getList())

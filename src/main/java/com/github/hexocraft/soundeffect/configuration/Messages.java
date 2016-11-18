@@ -116,7 +116,6 @@ public class Messages extends Configuration
 	@ConfigValue(path = "errors.list.empty")				public String eListEmpty = "There is no sound effect";
 
 
-
 	public Messages(JavaPlugin plugin, String fileName, boolean load)
 	{
 		super(plugin, fileName);
