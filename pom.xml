@@ -140,6 +140,20 @@
             <artifactId>plugin</artifactId>
             <version>[1.0.0, )</version>
             <scope>compile</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.github.hexocraftapi</groupId>
+                    <artifactId>nms</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.github.hexocraftapi</groupId>
+                    <artifactId>lights</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.github.hexocraftapi</groupId>
+                    <artifactId>weighted-selector</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <!-- exp4j -->
         <dependency>
@@ -183,7 +197,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.5.1</version>
+                <version>3.6.0</version>
                 <configuration>
                     <source>${jdk.version}</source>
                     <target>${jdk.version}</target>
@@ -250,7 +264,7 @@
                                 </relocation>
                             </relocations>
                             <minimizeJar>false</minimizeJar>
-                            <createDependencyReducedPom>true</createDependencyReducedPom>
+                            <createDependencyReducedPom>false</createDependencyReducedPom>
                         </configuration>
                     </execution>
                 </executions>
@@ -333,10 +347,10 @@
     <!-- Profiles -->
     <profiles>
         <profile>
-            <id>obfuscate</id>
+            <id>shrink</id>
             <activation>
                 <property>
-                    <name>obfuscate</name>
+                    <name>shrink</name>
                 </property>
             </activation>
             <build>
