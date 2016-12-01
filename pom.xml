@@ -23,7 +23,7 @@
     <groupId>com.github.hexocraft</groupId>
     <artifactId>soundeffect</artifactId>
     <name>SoundEffect</name>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <packaging>jar</packaging>
     <description>Sound Effect plugin and API fir Bukkit server.</description>
     <url>https://github.com/HexoCraft/${project.name}</url>
