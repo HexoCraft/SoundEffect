@@ -25,7 +25,7 @@
     <name>SoundEffect</name>
     <version>1.0.3</version>
     <packaging>jar</packaging>
-    <description>Sound Effect plugin and API fir Bukkit server.</description>
+    <description>Sound Effect plugin and API for Bukkit server.</description>
     <url>https://github.com/HexoCraft/${project.name}</url>
 
 

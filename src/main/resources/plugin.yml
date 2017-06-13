@@ -4,7 +4,7 @@ description: ${project.description}
 main: com.github.hexocraft.soundeffect.SoundEffectPlugin
 
 author: hexosse
-website: www.github.hexocraftapi
+website: www.github.hexocraft
 
 depend: []
 softdepend: []
