@@ -46,8 +46,9 @@ public class Config extends Configuration
 {
 	/* Plugin options */
 	@ConfigPath(path = "plugin", comment = "Plugin options")
-	@ConfigValue(path = "plugin.useMetrics", comment ="Enable Metrics")		public boolean useMetrics = (boolean) true;
-	@ConfigValue(path = "plugin.useUpdater", comment = "Enable Updater")	public boolean useUpdater = (boolean) true;
+	@ConfigValue(path = "plugin.useMetrics", comment ="Enable Metrics")			public boolean useMetrics = (boolean) true;
+	@ConfigValue(path = "plugin.useUpdater", comment = "Enable Updater")		public boolean useUpdater = (boolean) true;
+	@ConfigValue(path = "plugin.downloadUpdate", comment = "Download update")   public boolean downloadUpdate = (boolean) true;
 
 	/* Messages */
 	@ConfigValue(path = "Messages", comment = "The file where all messages are stored")	public String messages = "messages.yml";

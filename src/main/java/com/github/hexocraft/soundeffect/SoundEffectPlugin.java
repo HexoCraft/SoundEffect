@@ -58,13 +58,11 @@ public class SoundEffectPlugin extends Plugin
 		/* Enable message */
 		PluginTitleMessage.toConsole(this, "Enable", ChatColor.YELLOW);
 
-		/* Updater */
-		if(config.useUpdater)
-			runUpdater(getServer().getConsoleSender(), 20 * 10);
+        /* Updater */
+		runUpdater(getServer().getConsoleSender(), 20 * 10);
 
-		/* Metrics */
-		if(config.useMetrics)
-			runMetrics(20 * 2);
+        /* Metrics */
+		runMetrics(20 * 2);
 	}
 
 	@Override
@@ -77,11 +75,13 @@ public class SoundEffectPlugin extends Plugin
 
 	public void runUpdater(final CommandSender sender, int delay)
 	{
-		super.runUpdater(new GitHubUpdater(this, "HexoCraft/SoundEffect"), sender, delay);
+		if(config.useUpdater)
+			super.runUpdater(new GitHubUpdater(this, "HexoCraft/SoundEffect"), sender, config.downloadUpdate ,delay);
 	}
 
 	private void runMetrics(int delay)
 	{
-		super.RunMetrics(delay);
+		if(config.useMetrics)
+			super.RunMetrics(delay);
 	}
 }
