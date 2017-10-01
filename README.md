@@ -69,7 +69,3 @@ As it is designed as an API, you can add SoundEffect to your plugin using maven
 The API can be found in SoundEffectApi class.
 <br>
 <br>
-
-
-#### Ressources:
-Releases : https://github.com/hexocraft/SoundEffect/releases

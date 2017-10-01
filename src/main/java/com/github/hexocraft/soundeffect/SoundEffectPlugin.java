@@ -20,6 +20,7 @@ import com.github.hexocraftapi.message.Line;
 import com.github.hexocraftapi.message.predifined.message.PluginMessage;
 import com.github.hexocraftapi.message.predifined.message.PluginTitleMessage;
 import com.github.hexocraftapi.plugin.Plugin;
+import com.github.hexocraftapi.updater.BukkitUpdater;
 import com.github.hexocraftapi.updater.GitHubUpdater;
 import com.github.hexocraft.soundeffect.command.SeCommands;
 import com.github.hexocraft.soundeffect.configuration.Config;
@@ -56,7 +57,7 @@ public class SoundEffectPlugin extends Plugin
         /* Enregistrement des listener */
 
 		/* Enable message */
-		PluginTitleMessage.toConsole(this, "Enable", ChatColor.YELLOW);
+		PluginTitleMessage titleMessage = new PluginTitleMessage(this, "SoundEffect is enable ...", ChatColor.YELLOW);
 
         /* Updater */
 		runUpdater(getServer().getConsoleSender(), 20 * 10);
@@ -76,7 +77,7 @@ public class SoundEffectPlugin extends Plugin
 	public void runUpdater(final CommandSender sender, int delay)
 	{
 		if(config.useUpdater)
-			super.runUpdater(new GitHubUpdater(this, "HexoCraft/SoundEffect"), sender, config.downloadUpdate ,delay);
+			super.runUpdater(new BukkitUpdater(this, "279154"), sender, config.downloadUpdate ,delay);
 	}
 
 	private void runMetrics(int delay)
